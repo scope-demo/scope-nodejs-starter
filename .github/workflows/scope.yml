@@ -10,7 +10,6 @@ jobs:
       DB_NAME: demonodejs
       DB_PASS: password
       DB_PORT: 5432
-    runs-on: ubuntu-latest
     services:
       postgres:
         image: postgres:11.5
