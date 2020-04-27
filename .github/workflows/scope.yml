@@ -4,6 +4,22 @@ on: [push]
 
 jobs:
   scope:
+    env:
+      DB_USER: userdemonodejs
+      DB_HOST: localhost
+      DB_NAME: demonodejs
+      DB_PASS: password
+      DB_PORT: 5432
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:11.5
+        env:
+          POSTGRES_USER: userdemonodejs
+          POSTGRES_PASSWORD: password
+          POSTGRES_DB: demonodejs
+        ports:
+          - 5432:5432
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
